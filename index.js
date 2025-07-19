@@ -2,9 +2,17 @@ import express from "express";
 import os from "os";
 import pg from "pg";
 import dotenv from "dotenv";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(
+  cors({
+    origin: ["https://mahmudiysoft.uz", "http://127.0.0.1:5500"],
+    methods: ["POST"],
+    credentials: true,
+  })
+);
 dotenv.config();
 
 const { Pool } = pg;
