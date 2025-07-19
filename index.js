@@ -50,6 +50,6 @@ app.post(`/create-message`, async (req, res) => {
   }
 });
 
-app.listen(3500, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server is run");
 });
