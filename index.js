@@ -18,6 +18,20 @@ dotenv.config();
 const { Pool } = pg;
 const pool = new Pool();
 
+app.get("/messages", async (req, res) => {
+  try {
+    const result = await pool.query(`
+      select * from ms_messages;
+    `);
+
+    res.json({
+      data: result.rows[0],
+    });
+  } catch (error) {
+    throw error;
+  }
+});
+
 app.post(`/create-message`, async (req, res) => {
   try {
     const { name, email, message } = req.body;
