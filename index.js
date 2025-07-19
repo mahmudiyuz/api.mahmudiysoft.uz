@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://mahmudiysoft.uz", "http://127.0.0.1:5500"],
+    origin: ["https://mahmudiysoft.uz", "https://mahmudiysoft.netlify.app"],
     methods: ["POST"],
     credentials: true,
   })
