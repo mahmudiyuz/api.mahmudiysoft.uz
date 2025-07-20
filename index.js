@@ -25,7 +25,7 @@ app.get("/messages", async (req, res) => {
     `);
 
     res.json({
-      data: result.rows[0],
+      data: result.rows,
     });
   } catch (error) {
     throw error;
